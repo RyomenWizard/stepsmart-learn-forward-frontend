@@ -124,29 +124,29 @@ export default function Home() {
               title="Expert Mentors"
               description="Connect with industry professionals who have walked the path you're on."
               icon={<Users className="h-6 w-6" />}
-              className="animate-on-scroll opacity-0"
-              style={{ transitionDelay: "100ms" }}
+              className="animate-on-scroll opacity-0 transition-all"
+              data-delay="100ms"
             />
             <FeatureCard
               title="Quality Courses"
               description="Access comprehensive learning materials designed for practical application."
               icon={<BookOpen className="h-6 w-6" />}
-              className="animate-on-scroll opacity-0"
-              style={{ transitionDelay: "300ms" }}
+              className="animate-on-scroll opacity-0 transition-all"
+              data-delay="300ms"
             />
             <FeatureCard
               title="Skill Certification"
               description="Earn recognized certificates to showcase your newly acquired skills."
               icon={<Award className="h-6 w-6" />}
-              className="animate-on-scroll opacity-0"
-              style={{ transitionDelay: "500ms" }}
+              className="animate-on-scroll opacity-0 transition-all"
+              data-delay="500ms"
             />
             <FeatureCard
               title="Progress Tracking"
               description="Monitor your development with detailed analytics and feedback."
               icon={<BarChart className="h-6 w-6" />}
-              className="animate-on-scroll opacity-0"
-              style={{ transitionDelay: "700ms" }}
+              className="animate-on-scroll opacity-0 transition-all"
+              data-delay="700ms"
             />
           </div>
         </div>
@@ -169,8 +169,8 @@ export default function Home() {
                 role={testimonial.role}
                 content={testimonial.content}
                 avatarUrl={testimonial.avatarUrl}
-                className="animate-on-scroll opacity-0"
-                style={{ transitionDelay: `${index * 200}ms` }}
+                className={`animate-on-scroll opacity-0 transition-all`}
+                data-delay={`${index * 200}ms`}
               />
             ))}
           </div>
