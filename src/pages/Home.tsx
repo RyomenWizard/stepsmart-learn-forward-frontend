@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { HeroAnimation } from "@/components/HeroAnimation";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -20,6 +19,12 @@ export default function Home() {
         if (isVisible) {
           (el as HTMLElement).classList.add("animate-fade-in");
           (el as HTMLElement).style.opacity = "1";
+          
+          // Apply transition delay if data-delay attribute exists
+          const delay = (el as HTMLElement).dataset.delay;
+          if (delay) {
+            (el as HTMLElement).style.transitionDelay = delay;
+          }
         }
       });
     };
@@ -78,7 +83,7 @@ export default function Home() {
           />
 
           <div className="grid gap-6 md:grid-cols-2 lg:gap-12">
-            <div className="space-y-4 animate-on-scroll opacity-0" style={{ transitionDelay: "100ms" }}>
+            <div className="space-y-4 animate-on-scroll opacity-0" data-delay="100ms">
               <h3 className="text-2xl font-bold">Our Vision</h3>
               <p className="text-muted-foreground">
                 At StepSmart, we believe that everyone deserves access to quality
@@ -92,7 +97,7 @@ export default function Home() {
                 development and accelerate career growth.
               </p>
             </div>
-            <div className="space-y-4 animate-on-scroll opacity-0" style={{ transitionDelay: "300ms" }}>
+            <div className="space-y-4 animate-on-scroll opacity-0" data-delay="300ms">
               <h3 className="text-2xl font-bold">Our Approach</h3>
               <p className="text-muted-foreground">
                 We've developed a unique matching system that pairs mentees with
@@ -169,7 +174,7 @@ export default function Home() {
                 role={testimonial.role}
                 content={testimonial.content}
                 avatarUrl={testimonial.avatarUrl}
-                className={`animate-on-scroll opacity-0 transition-all`}
+                className="animate-on-scroll opacity-0 transition-all"
                 data-delay={`${index * 200}ms`}
               />
             ))}
